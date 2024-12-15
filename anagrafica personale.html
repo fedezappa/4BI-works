@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1{
+            text-align: center;
+            color: rgb(7, 7, 7);
+            font-size: 24px;
+            padding-bottom: 15px;
+        } 
+        p{
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding-left: 2%;
+        }
+        body{
+            background-image: url(https://unprofaifornelli.it/wp-content/uploads/2020/10/reti-informatiche-2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+        table {
+            width: 50%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid black;
+            font-size: 24px;
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
+<script>
+function stampa() {
+var a=document.getElementById("demo").value
+document.getElementById("dest").innerHTML=a
+var b=document.getElementById("demo1").value
+document.getElementById("dest1").innerHTML=b
+var c=document.getElementById("demo2").value
+document.getElementById("dest2").innerHTML=c
+
+}
+</script>
+</head>
+<body>
+    <h1>Anagrafia personale</h1>
+    <p> Nome:
+        <input type="text" id="demo">
+<input type="button" value="Clicca" onclick="stampa()">
+    </p>
+    <p> Cognome:
+        <input type="text" id="demo1">
+<input type="button" value="Clicca" onclick="stampa()">
+    </p>
+    <p> Indirizzo:
+        <input type="text" id="demo2">
+<input type="button" value="Clicca" onclick="stampa()">
+    </p>
+    <center>
+        <table>
+            <th colspan="3" style="color: rgb(16, 16, 16); text-align: center;">Tabella</th>
+            <tr>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Indirizzo</th>
+            </tr>
+            <tr>
+            <td><p id="dest"></p></td>
+            <td><p id="dest1"></p></td>
+            <td><p id="dest2"></p></td>
+            </tr>
+            </table>
+    </center>
+</body>
+</html>

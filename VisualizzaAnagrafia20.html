@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizza Anagrafiche</title>
+    <script>
+        function caricaDati() {
+            
+            const supervettore = JSON.parse(localStorage.getItem('supervettore')) || [];
+
+           
+            const tbody = document.getElementById('tabella-dati');
+
+            
+            tbody.innerHTML = '';
+
+            
+            supervettore.forEach(vettore => {
+                const row = document.createElement('tr');
+                vettore.forEach(dato => {
+                    const cell = document.createElement('td');
+                    cell.textContent = dato;
+                    row.appendChild(cell);
+                });
+                tbody.appendChild(row);
+            });
+        }
+    </script>
+</head>
+<body onload="caricaDati()">
+    <h1>Anagrafiche Registrate</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Email</th>
+                <th>Telefono</th>
+            </tr>
+        </thead>
+        <tbody id="tabella-dati">
+        </tbody>
+    </table>
+    <button onclick="location.href='form.html';">Torna al Form</button>
+</body>
+</html>

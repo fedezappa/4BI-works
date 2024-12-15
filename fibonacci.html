@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequenza di Fibonacci</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        #fibonacciDiv {
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Sequenza di Fibonacci</h1>
+    <div id="fibonacciDiv"></div>
+
+    <script>
+        
+        const fibonacciDiv = document.getElementById("fibonacciDiv");
+
+        
+        let a = 0, b = 1;
+        let result = `${a}, ${b}`; 
+
+        
+        do {
+            const next = a + b; 
+            if (next > 100) break; 
+            result += `, ${next}`; 
+            a = b; 
+            b = next; 
+        } while (true);
+
+        
+        fibonacciDiv.textContent = result;
+    </script>
+</body>
+</html>

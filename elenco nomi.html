@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elenco nomi</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+        color: rgb(237, 9, 9);
+        font-size: 22px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    p{
+        padding-top: 15px;
+        padding-left: 5px;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    body{
+            background-image: url(https://images.squarespace-cdn.com/content/v1/63ee043eb4d0202c9e6aa707/41384e18-7d5c-41e8-89ef-b630b40c64f0/Nomi+plain+logo+8.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+    }
+</style>
+<body>
+    <h1>Elenco nomi</h1>
+    <p>Inserisci il numero di persone da inserire:</p>
+    <input type="text" id="iterazioni">
+    <button onclick="caricaArray()">Carica Array</button>
+<script>
+    function caricaArray() {
+        const iterazioni = parseInt(document.getElementById("iterazioni").value, 10);
+        const dati = [];
+        for (let i = 0; i < iterazioni; i++) {
+            let nome = prompt(`Come ti chiami?`);
+            dati.push(nome);
+            let cognome = prompt(`Qual è il tuo cognome?`);
+            dati.push(cognome);
+            let dataDiNascita = prompt(`Quando sei nato?`);
+            dati.push(dataDiNascita);
+            let citta = prompt(`Dove abiti?`);
+            dati.push(citta);
+        }
+        let risultato = dati.join(' ');
+        console.log(risultato);
+    }
+</script>
+</body>
+</html>

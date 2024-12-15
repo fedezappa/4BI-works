@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta Cifre</title>
+</head>
+<body>
+    <h1>Conta Cifre</h1>
+    <label for="numero">Inserisci un numero:</label>
+    <input type="text" id="numero" placeholder="Inserisci un numero">
+    <button onclick="contaCifre()">Conta Cifre</button>
+
+    <p id="risultato"></p>
+
+    <script>
+        function contaCifre() {
+            
+            let numero = document.getElementById("numero").value;
+
+            
+            if (!numero || isNaN(numero)) {
+                document.getElementById("risultato").innerText = "Per favore inserisci un numero valido.";
+                return;
+            }
+
+            
+            let numeroCifre = numero.toString().length;
+
+            
+            document.getElementById("risultato").innerText = "Numero cifre: " + numeroCifre;
+        }
+    </script>
+</body>
+</html>
