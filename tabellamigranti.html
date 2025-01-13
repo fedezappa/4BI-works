@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TABELLA CSV MIGRANTI</title>
+    <style>
+        body {
+            background-image: url('le-migrazioni.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            color: rgb(255, 0, 0);
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .table-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.9); 
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            font-weight: bold;
+        }
+        
+        th, td {
+            padding: 7px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>TABELLA CSV MIGRANTI</h1>
+    <input type="file" onchange="readFile(this)" accept=".csv">
+    <div class="table-container">
+        <table id="tabellaCSV"></table>
+    </div>
+
+    <script>
+        function readFile(input) {
+            let file = input.files[0];
+            let reader = new FileReader();
+
+            reader.readAsText(file);
+            reader.onload = function() {
+                let data = reader.result;
+                let rows = data.split("\n");
+                let table = document.getElementById("tabellaCSV");
+                table.innerHTML = "";
+
+                for (let i = 0; i < rows.length; i++) {
+                    let row = rows[i].split(",");
+                    let tr = document.createElement("tr");
+                    for (let j = 0; j < row.length; j++) {
+                        let cell;
+                        if (i === 0) {
+                            cell = document.createElement("th");
+                        } else {
+                            cell = document.createElement("td");
+                        }
+                        cell.textContent = row[j].trim();
+                        tr.appendChild(cell);
+                    }
+                    table.appendChild(tr);
+                }
+            };
+            reader.onerror = function() {
+                console.error("errore: impossibile leggere il file:", reader.error);
+            };
+        }
+    </script>
+</body>
+</html>
