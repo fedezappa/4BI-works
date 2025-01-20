@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>STELLA</title>
+    </head>
+    <style>
+        h1 {
+            color: rgb(1, 1, 1);
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        body {
+            align-items: center;
+            font-family: Arial, sans-serif;
+
+        }
+        @keyframes mymove{
+            50% {transform: rotate(360deg);}
+        }
+    </style>
+    <body>
+        <h1>canvas stella</h1>
+        <center>
+            <canvas id="myCanvas" width="500" height="500" style="padding-top: 20px; animation: mymove 5s infinite">
+                i canvas non sono supportati dal tuo browser
+            </canvas>
+        </center>
+    </body>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+       
+        ctx.lineWidth = 0;
+
+        
+        ctx.beginPath();
+        ctx.moveTo(250, 250);  
+        ctx.lineTo(250, 50);   
+        ctx.lineTo(300, 200);  
+        ctx.closePath();
+        ctx.fillStyle = "#fdee2f";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(250, 250);  
+        ctx.lineTo(300, 200);  
+        ctx.lineTo(450, 200);  
+        ctx.closePath();
+        ctx.fillStyle = "#fdee2f";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(250, 250);  
+        ctx.lineTo(450, 200);  
+        ctx.lineTo(325, 300);  
+        ctx.closePath();
+        ctx.fillStyle = "#fdee2f";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(250, 250);  
+        ctx.lineTo(325, 300); 
+        ctx.lineTo(375, 450);  
+        ctx.closePath();
+        ctx.fillStyle = "#fdee2f";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(250, 250);  
+        ctx.lineTo(375, 450);  
+        ctx.lineTo(250, 350);  
+        ctx.closePath();
+        ctx.fillStyle = "#fdee2f";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(250, 250); 
+        ctx.lineTo(250, 350);  
+        ctx.lineTo(125, 450); 
+        ctx.closePath();
+        ctx.fillStyle = "#fdee2f";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(250, 250);  
+        ctx.lineTo(125, 450);  
+        ctx.lineTo(175, 300);  
+        ctx.closePath();
+        ctx.fillStyle = "#fdee2f";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(250, 250); 
+        ctx.lineTo(175, 300);  
+        ctx.lineTo(50, 200);   
+        ctx.closePath();
+        ctx.fillStyle = "#fdee2f";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(250, 250);  
+        ctx.lineTo(50, 200);   
+        ctx.lineTo(200, 200); 
+        ctx.closePath();
+        ctx.fillStyle = "#fdee2f";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(250, 250);  
+        ctx.lineTo(200, 200);  
+        ctx.lineTo(250, 50);  
+        ctx.closePath();
+        ctx.fillStyle = "#fdee2f";
+        ctx.fill();
+    </script>
+</html>
