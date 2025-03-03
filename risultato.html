@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Griglia Risultati</title>
+</head>    
+<style>
+    body{
+        text-transform: uppercase;
+    }
+        table {
+            width: 50%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            font-size: 130%;
+            color: black;
+            font-family: Verdana, sans-serif;
+        }
+        h1 {
+            color: red;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            font-size: 35px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabella Dati</h1>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="7" style="text-align: center">Dati Utenti</th>
+                <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Età</th>
+                <th>Compleanno</th>
+                <th>Indirizzo</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody id="vettore"></tbody>
+    </table>
+
+    <script>
+        const dati = JSON.parse(localStorage.getItem('vettore')) || [];
+        const tabella = document.getElementById('vettore');
+        tabella.innerHTML = "";
+    
+        let i = 0;
+        while (i < dati.length) {
+            const dato = dati[i];
+            const riga = document.createElement('tr');
+    
+            const nome = document.createElement('td');
+            nome.textContent = dato.Nome;
+    
+            const cognome = document.createElement('td');
+            cognome.textContent = dato.Cognome;
+    
+            const eta = document.createElement('td');
+            eta.textContent = dato.Età;
+    
+            const compleanno = document.createElement('td');
+            compleanno.textContent = dato.Compleanno;
+    
+            const indirizzo = document.createElement('td');
+            indirizzo.textContent = dato.Indirizzo;
+    
+            const email = document.createElement('td');
+            email.textContent = dato.Email;
+    
+            const password = document.createElement('td');
+            password.textContent = dato.Password;
+    
+            riga.appendChild(nome);
+            riga.appendChild(cognome);
+            riga.appendChild(eta);
+            riga.appendChild(compleanno);
+            riga.appendChild(indirizzo);
+            riga.appendChild(email);
+            riga.appendChild(password);
+            
+            tabella.appendChild(riga);
+            i++;
+        }
+    </script>
+    
+</body>
+</html>

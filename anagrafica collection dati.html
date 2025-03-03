@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+input[type=text], input[type=password] {
+  width: 15%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 5px solid black;
+  box-sizing: border-box;
+}
+
+h1{
+  color: red;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  width: auto;
+}
+
+.container {
+  padding: 16px;
+  align-items: center;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Anagrafica</h1>
+<center>
+  <div class="container">
+    <label for="nome"><b>Nome</b></label>
+    <input type="text" id="nomeUtente" placeholder="Inserisci il nome" name="nome" required>
+    <p>
+      <label for="cognome"><b>Cognome</b></label>
+      <input type="text" id="cognomeUtente" placeholder="Inserisci il cognome" name="cognome" required>
+    </p>
+<p>
+  <label for="eta"><b>Età</b></label>
+  <input type="text" id="etaUtente" placeholder="Inserisci l'età" name="eta" required>
+</p>
+  <p>
+    <label for="compleanno"><b>Compleanno</b></label>
+    <input type="date" id="compleannoUtente" name="compleanno" required>
+  </p>
+
+    <p>
+      <label for="indirizzo"><b>Indirizzo</b></label>
+      <input type="text" id="indirizzoUtente" placeholder="Inserisci l'indirizzo" name="indirizzo" required>
+    </p>
+  <p>
+    <label for="email"><b>Email</b></label>
+    <input type="text" id="emailUtente" placeholder="Inserisci la mail" name="email" required>
+  </p>
+
+  <p>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" id="pswUtente" placeholder="Inserisci la password" name="psw" required>
+  </p>
+    <button type="button" onclick="salvaUtenti()">salva utente</button>
+    <button type="button" onclick="inviaAnagrafica()">mostra a schermo il risultato</button>
+  </div>
+</center>
+
+
+<script>
+    let vettore = [];
+    function salvaUtenti() {
+        const nomeUtente = document.getElementById("nomeUtente").value;
+        const cognomeUtente = document.getElementById("cognomeUtente").value;
+        const etaUtente = document.getElementById("etaUtente").value;
+        const compleannoUtente = document.getElementById("compleannoUtente").value;
+        const indirizzoUtente = document.getElementById("indirizzoUtente").value;
+        const emailUtente = document.getElementById("emailUtente").value;
+        const passwordUtente = document.getElementById("pswUtente").value;
+
+        const dati = { Nome: nomeUtente, Cognome: cognomeUtente, Età: etaUtente, Compleanno: compleannoUtente, Indirizzo: indirizzoUtente, Email: emailUtente, Password: pswUtente};
+        vettore.push(dati);
+        console.log(vettore);
+    }
+   
+    function inviaAnagrafica() {
+        localStorage.setItem("vettore", JSON.stringify(vettore));
+        window.location.href = "risultato.html";
+    }  
+</script>
+
+</body>
+</html>
+
