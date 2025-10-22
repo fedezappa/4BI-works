@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
 function mostraTabella(lista) {
     const tbody = document.querySelector("#tabellaUtenti tbody");
-    tbody.innerHTML = "";
+    //tbody.innerHTML = "";
     for (let i = 0; i < lista.length; i++) {
         const s = lista[i];
         const tr = document.createElement("tr");
@@ -96,4 +96,5 @@ document.getElementById("generazioneBtn").addEventListener("click", function() {
     else generazione = "Data non riconosciuta";
     output.innerHTML = `<b>${generazione}</b>`;
 });
+
 
