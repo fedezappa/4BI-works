@@ -1,9 +1,8 @@
 [
-    { "nome": "Luca", "cognome": "Adesuwa", "dataNascita": "2003-06-15" },
-    { "nome": "Marco", "cognome": "Al Muhtaseb", "dataNascita": "2007-09-10" },
-    { "nome": "Anna", "cognome": "Bianchi", "dataNascita": "2005-12-01" },
-    { "nome": "Elisa", "cognome": "Costa", "dataNascita": "2010-04-22" },
-    { "nome": "Giovanni", "cognome": "De Rossi", "dataNascita": "1998-02-18" },
-    { "nome": "Sara", "cognome": "Esposito", "dataNascita": "2015-11-30" }
+    { "nome": "Luca", "cognome": "Adesuwa", "dataNascita": "2003-06-15", "classe": "5B" },
+    { "nome": "Marco", "cognome": "Al Muhtaseb", "dataNascita": "2007-09-10", "classe": "5B" },
+    { "nome": "Anna", "cognome": "Bianchi", "dataNascita": "2005-12-01", "classe": "5B" },
+    { "nome": "Elisa", "cognome": "Costa", "dataNascita": "2010-04-22", "classe": "5B" },
+    { "nome": "Giovanni", "cognome": "De Rossi", "dataNascita": "1998-02-18", "classe": "5B" },
+    { "nome": "Sara", "cognome": "Esposito", "dataNascita": "2015-11-30", "classe": "5B" }
 ]
-  
