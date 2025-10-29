@@ -25,11 +25,19 @@ function mostraTabella(lista) {
     tbody.innerHTML = "";
     for (let i = 0; i < lista.length; i++) {
         const s = lista[i];
-        const tr = document.createElement("tr");
-        tr.innerHTML = `<td>${s.nome}</td><td>${s.cognome}</td><td>${s.classe}</td><td>${s.nascita}</td>`;
+        const data = s.nascita || s.dataNascita; // compatibilità
+        const classe = s.classe || "—"; // se non c’è, metti un trattino o calcola tu
+        tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${s.nome}</td>
+            <td>${s.cognome}</td>
+            <td>${classe}</td>
+            <td>${data}</td>
+        `;
         tbody.appendChild(tr);
     }
 }
+
 
 
 document.getElementById("filtraBtn").addEventListener("click", function() {
@@ -46,13 +54,15 @@ document.getElementById("filtraBtn").addEventListener("click", function() {
 
 
 function calcolaEta(nascitaStr) {
-    const nascita = parseData(nascitaStr);
+    const nascita = new Date(nascitaStr);
     const oggi = new Date();
     let eta = oggi.getFullYear() - nascita.getFullYear();
     if (
         oggi.getMonth() < nascita.getMonth() ||
         (oggi.getMonth() === nascita.getMonth() && oggi.getDate() < nascita.getDate())
-    ) eta--;
+    ) {
+        eta--;
+    }
     return eta;
 }
 
@@ -96,6 +106,3 @@ document.getElementById("generazioneBtn").addEventListener("click", function() {
     else generazione = "Data non riconosciuta";
     output.innerHTML = `<b>${generazione}</b>`;
 });
-
-
-
