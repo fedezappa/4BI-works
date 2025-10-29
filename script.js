@@ -20,14 +20,16 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 
+const classeDefault = "5B";
+
 function mostraTabella(lista) {
     const tbody = document.querySelector("#tabellaUtenti tbody");
     tbody.innerHTML = "";
     for (let i = 0; i < lista.length; i++) {
         const s = lista[i];
-        const data = s.nascita || s.dataNascita; // compatibilità
-        const classe = s.classe || "—"; // se non c’è, metti un trattino o calcola tu
-        tr = document.createElement("tr");
+        const data = s.dataNascita;
+        const classe = s.classe || classeDefault;
+        const tr = document.createElement("tr");
         tr.innerHTML = `
             <td>${s.nome}</td>
             <td>${s.cognome}</td>
@@ -37,6 +39,7 @@ function mostraTabella(lista) {
         tbody.appendChild(tr);
     }
 }
+
 
 
 
