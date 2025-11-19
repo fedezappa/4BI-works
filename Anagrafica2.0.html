@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Anagrafica Classe 5B</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px 10px;
+    }
+    th {
+      background-color: #eee;
+    }
+    input, button {
+      margin: 5px 0;
+      padding: 5px;
+    }
+    #errorMessage {
+      color: red;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Anagrafica Classe 5B</h1>
+
+  <!-- Tabella per visualizzare gli utenti -->
+  <h3>1. Tabella completa utenti</h3>
+  <table id="tabellaUtenti">
+    <thead>
+      <tr><th>Nome</th><th>Cognome</th><th>Classe</th><th>Data di Nascita</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Filtra per lettera iniziale del cognome -->
+  <h3>2. Filtra cognomi per lettera iniziale</h3>
+  <input type="text" id="lettera" maxlength="1" style="width: 30px;" />
+  <button id="filtraBtn">Filtra</button>
+
+  <!-- Filtra per età -->
+  <h3>3. Filtra per età</h3>
+  <button id="maggiorenniBtn">Mostra maggiorenni</button>
+  <button id="minorenniBtn">Mostra minorenni</button>
+
+  <!-- Verifica generazione -->
+  <h3>4. Verifica generazione da data di nascita</h3>
+  <input type="date" id="dataInput" />
+  <button id="generazioneBtn">Verifica generazione</button>
+  <p id="generazioneOutput"></p>
+
+  <!-- Messaggio di errore nel caso di un problema con il file XML -->
+  <p id="errorMessage">Impossibile caricare il file XML. Assicurati che il file sia presente e corretto.</p>
+
+  <script src="script2.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<studenti>
+    <studente>
+        <nome>Luca</nome>
+        <cognome>Adesuwa</cognome>
+        <dataNascita>2003-06-15</dataNascita>
+        <classe>5B</classe>
+    </studente>
+    <studente>
+        <nome>Marco</nome>
+        <cognome>Al Muhtaseb</cognome>
+        <dataNascita>2007-09-10</dataNascita>
+        <classe>5B</classe>
+    </studente>
+    <studente>
+        <nome>Anna</nome>
+        <cognome>Bianchi</cognome>
+        <dataNascita>2005-12-01</dataNascita>
+        <classe>5B</classe>
+    </studente>
+    <studente>
+        <nome>Elisa</nome>
+        <cognome>Costa</cognome>
+        <dataNascita>2010-04-22</dataNascita>
+        <classe>5B</classe>
+    </studente>
+    <studente>
+        <nome>Giovanni</nome>
+        <cognome>De Rossi</cognome>
+        <dataNascita>1998-02-18</dataNascita>
+        <classe>5B</classe>
+    </studente>
+    <studente>
+        <nome>Sara</nome>
+        <cognome>Esposito</cognome>
+        <dataNascita>2015-11-30</dataNascita>
+        <classe>5B</classe>
+    </studente>
+</studenti>
